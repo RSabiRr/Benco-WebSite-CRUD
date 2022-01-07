@@ -1,0 +1,41 @@
+﻿@model  Settings
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="settings" asp-action="update" model="post">
+                <div asp-validation-summary="All" class="text-danger">  </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Phone" class="form-label">Phone</label>
+                    <input class="form-control" type="tel" asp-for="@Model.Phone">
+                    <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Email" class="form-label">Email</label>
+                    <input class="form-control" type="email" asp-for="@Model.Email">
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Adress" class="form-label">Adress</label>
+                    <input class="form-control"  asp-for="@Model.Adress">
+                    <span asp-validation-for="@Model.Adress" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.WorkTime" class="form-label">WorkTime</label>
+                    <input class="form-control" type="time" asp-for="@Model.WorkTime">
+                    <span asp-validation-for="@Model.WorkTime" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Logo" class="form-label">Logo</label>
+                    <input class="form-control" asp-for="@Model.Logo">
+                    <span asp-validation-for="@Model.Logo" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+
+        </div>
+    </div>
+</div>

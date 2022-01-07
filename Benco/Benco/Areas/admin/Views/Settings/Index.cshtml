@@ -1,0 +1,52 @@
+﻿@model  List<Settings>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-primary mb-3" asp-area="admin" asp-controller="Settings" asp-action="create">Create</a>
+        </div>
+        <div class="col-log-12">
+            <table class="table">
+                <thead>
+                    <tr class="mr-2">
+                        <th scope="col">#</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Adress</th>
+                        <th scope="col">WorkTime</th>
+                        <th scope="col">Logo</th>
+
+
+                    </tr>
+                </thead>
+                <tbody class="mr-2">
+                    @{ int i = 0;}
+                    @foreach (var item in Model)
+                    {
+                        i++;
+                    <tr class="mr-2">
+                        <th scope="row">@i</th>
+                        <td>@item.Phone</td>
+                        <td>@item.Email  </td>
+                        <td>@item.Adress</td>
+                        <td>@item.WorkTime</td>
+                        <td>@item.Logo</td>
+
+                        <td>
+                            <a class="btn btn-success" asp-area="admin" asp-controller="settings" asp-action="update" asp-route-id="@item.Id">Update</a>
+                            <a class="btn btn-danger" asp-area="admin" asp-controller="settings" asp-action="delete" onclick="return confirm('Silinsin??? !')" asp-route-id="@item.Id"  >Delete</a>
+
+                        </td>
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

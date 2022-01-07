@@ -1,0 +1,35 @@
+﻿@model Settings
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="settings" asp-action="create" model="post">
+                <div class="mb-3">
+                    <label asp-for="@Model.Phone" class="form-label">Phone</label>
+                    <input class="form-control" type="tel" asp-for="@Model.Phone">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Email" class="form-label">Email</label>
+                    <input class="form-control" type="email" asp-for="@Model.Email">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Adress" class="form-label">Adress</label>
+                    <input class="form-control"  asp-for="@Model.Adress">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.WorkTime" class="form-label">WorkTime</label>
+                    <input class="form-control" type="time" asp-for="@Model.WorkTime">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Logo" class="form-label">Logo</label>
+                    <input class="form-control" asp-for="@Model.Logo">
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+
+        </div>
+    </div>
+</div>
